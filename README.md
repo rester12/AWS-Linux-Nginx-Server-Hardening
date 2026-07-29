@@ -8,6 +8,12 @@ The project also documents the troubleshooting performed when networking, permis
 
 This is a project-based training environment created to practice AWS and Linux administration. It is not presented as a production deployment.
 
+## Medium Article
+
+Read the complete project walkthrough, implementation details, troubleshooting notes, and lessons learned:
+
+[Building and Hardening a Multi-Site Nginx Application Server on AWS EC2](https://medium.com/@rester.mcglown/building-and-hardening-a-multi-site-nginx-application-server-on-aws-ec2-d395a36a8e21)
+
 ## Architecture
 
 ```mermaid
