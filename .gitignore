@@ -1,0 +1,17 @@
+# Private keys and credentials
+*.pem
+*.key
+.env
+.aws/
+credentials
+
+# Project source documents
+*.docx
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Operating system files
+.DS_Store
+Thumbs.db
