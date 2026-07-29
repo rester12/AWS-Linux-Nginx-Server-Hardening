@@ -1,0 +1,9 @@
+[Unit]
+Description=Run the Nginx multi-site health check
+After=network-online.target nginx.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/webserver_healthcheck.sh
+

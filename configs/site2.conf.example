@@ -1,0 +1,21 @@
+server {
+    listen 80;
+    server_name site2.local;
+
+    root /var/www/site2/html;
+    index index.html;
+
+    access_log /var/log/nginx/site2_access.log;
+    error_log /var/log/nginx/site2_error.log;
+
+    error_page 404 /404.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location = /404.html {
+        internal;
+    }
+}
+
