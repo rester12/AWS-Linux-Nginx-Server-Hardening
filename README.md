@@ -17,30 +17,20 @@ Read the complete project walkthrough, implementation details, troubleshooting n
 ## Architecture
 
 ```mermaid
-flowchart LR
-    Admin["Administrator"] -->|"SSH TCP 22"| SG["AWS Security Group"]
-    Visitors["Web Clients"] -->|"HTTP TCP 80"| SG
-    SG --> EC2["Amazon Linux 2 EC2 Instance"]
-
-    subgraph Server["Hardened Linux Application Server"]
-        Nginx["Nginx Web Server"]
-        Site1["site1.local"]
-        Site2["site2.local"]
-        Health["Bash Health Check"]
-        Timer["systemd Service and Timer"]
-        Security["SSH Hardening, Fail2Ban, and firewalld"]
-        Logs["Nginx and systemd Logs"]
-
-        Nginx --> Site1
-        Nginx --> Site2
-        Timer --> Health
-        Health --> Nginx
-        Nginx --> Logs
-        Health --> Logs
-        Security --> Nginx
-    end
-
-    EC2 --> Nginx
+graph LR;
+    A[Administrator] -->|SSH TCP 22| C[AWS Security Group];
+    B[Web Clients] -->|HTTP TCP 80| C;
+    C --> D[Amazon Linux 2 EC2 Instance];
+    D --> E[Nginx Web Server];
+    D --> F[SSH Hardening and Firewall];
+    D --> G[systemd Service and Timer];
+    F --> E;
+    G --> H[Bash Health Check];
+    H --> E;
+    E --> I[site1.local];
+    E --> J[site2.local];
+    E --> K[Nginx and systemd Logs];
+    H --> K;
 ```
 
 ## Technologies Used
